@@ -131,7 +131,7 @@ pub struct EguiMq {
     native_dpi_scale: f32,
     /// Pixels per point from egui. Can differ from native DPI because egui allows zooming.
     pixels_per_point: f32,
-    egui_ctx: egui::Context,
+    pub egui_ctx: egui::Context,
     egui_input: egui::RawInput,
     painter: painter::Painter,
     #[cfg(target_os = "macos")]
@@ -330,7 +330,7 @@ impl EguiMq {
                 key,
                 pressed: true,
                 modifiers,
-                repeat: false, // egui will set this for us
+                repeat: false,      // egui will set this for us
                 physical_key: None, // unsupported
             })
         }
@@ -345,7 +345,7 @@ impl EguiMq {
                 key,
                 pressed: false,
                 modifiers,
-                repeat: false, // egui will set this for us
+                repeat: false,      // egui will set this for us
                 physical_key: None, // unsupported
             })
         }
